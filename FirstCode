@@ -1,0 +1,68 @@
+package pt;
+
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class TestPurpose {
+
+	@Test
+	public void test2() throws Exception {
+
+		WebElement element1;
+
+		// Runtime.getRuntime().exec("taskkill /F /IM Firefox.exe");
+
+		WebDriver wd = new ChromeDriver();
+
+		System.setProperty("webdriver.chrome.driver",
+				"C:\\Users\\591211\\Desktop\\CD\\chromedriver_win32\\chromedriver.exe");
+
+		wd.get("https://test.salesforce.com/");
+
+		element1 = wd.findElement(By.id("username"));
+
+		element1.sendKeys("baishampayan.roy@tcs.com.ctinew");
+
+		element1 = wd.findElement(By.id("password"));
+
+		element1.sendKeys("Kolkata@1");
+
+		element1 = wd.findElement(By.xpath("//input[@value='Log In to Sandbox']"));
+
+		element1.click();
+
+		Thread.sleep(10000);
+
+		wd.switchTo().alert().accept();
+
+		Thread.sleep(2000);
+
+		element1 = wd.findElement(By.xpath("//span[contains(.,'Omni-Channel')]"));
+
+		element1.click();
+
+		Thread.sleep(2000);
+
+		element1 = wd.findElement(By.xpath("//a[contains(.,'Accept')]"));
+
+		element1.click();
+
+		Thread.sleep(7000);
+
+		Robot rb = new Robot();
+
+		rb.keyPress(KeyEvent.VK_C);
+
+		Thread.sleep(4000);
+
+		wd.navigate().refresh();
+
+	}
+
+}
