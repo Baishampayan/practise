@@ -26,6 +26,8 @@ public class TestPurpose {
 		wd.get("https://test.salesforce.com/");
 
 		element1 = wd.findElement(By.id("username"));
+		
+		// Checking
 
 		element1.sendKeys("baishampayan.roy@tcs.com.ctinew");
 
