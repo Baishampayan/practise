@@ -6,6 +6,9 @@ public class TestGitCommit {
 
 
 		System.out.println("ABCD");
+		
+		
+		System.out.println("Testing");
 
 	}
 
